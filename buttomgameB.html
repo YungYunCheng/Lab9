@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Lab 09 Part B</title>
+<style>
+body{
+    background-color: cornflowerblue;
+    }
+                
+
+</style>
+<body>
+    <p>How many buttons to creates?</p>
+    <input type="text" value=" " id="Number">
+    <button id = "number">Go!</button><br>
+        
+    <script>
+    let x = document.getElementById("Number").value
+    x = parseInt(x);
+
+        let arraybuttons = []
+        let widthVariable = window.innerWidth
+        let heightVariable = window.innerHeight
+
+    function Button(color, width, height, top, left, order) {
+        this.order = order;
+        this.btn = document.createElement("button");
+        this.btn.style.width = width;
+        this.btn.style.height = height;
+        this.btn.style.position = "absolute";
+        document.body.appendChild(this.btn);
+        
+        this.setLocation = function (top, left) {
+            this.btn.style.top = top;
+            this.btn.style.left = left;
+        };
+        this.setLocation(top, left);
+        }
+        arraybuttons.push(new Button("Red", "120px", "60px", "0px", "0px", 0));
+        arraybuttons.push(new Button("Blue", "120px", "60px", "0px", "0px", 1));
+        arraybuttons.push(new Button("orange", "120px", "60px", "0px", "0px", 2));
+        arraybuttons.push(new Button("yellow", "120px", "60px", "0px", "0px", 3));
+        arraybuttons.push(new Button("indigo", "120px", "60px", "0px", "0px", 4));
+
+       
+        setInterval(function() {
+            arraybuttons[0].setLocation(
+                Math.floor(Math.random() *  (widthVariable - 120)) + "px",
+                Math.floor(Math.random() * (heightVariable - 60)) + "px");
+            }, 2000);
+        setInterval(function() {
+            arraybuttons[1].setLocation(
+                Math.floor(Math.random() *  (widthVariable - 120)) + "px",
+                Math.floor(Math.random() * (heightVariable - 60)) + "px");
+            }, 2000);
+        setInterval(function() {
+            arraybuttons[2].setLocation(
+                Math.floor(Math.random() *  (widthVariable - 120)) + "px",
+                Math.floor(Math.random() * (heightVariable - 60)) + "px");
+            }, 2000);
+        setInterval(function() {
+            arraybuttons[3].setLocation(
+                Math.floor(Math.random() *  (widthVariable - 120)) + "px",
+                Math.floor(Math.random() * (heightVariable - 60)) + "px");
+            }, 2000);
+        setInterval(function() {
+            arraybuttons[4].setLocation(
+                Math.floor(Math.random() *  (widthVariable- 120)) + "px",
+                Math.floor(Math.random() * (heightVariable - 60)) + "px");
+            }, 2000);
+        </script>
+           
+        </body>

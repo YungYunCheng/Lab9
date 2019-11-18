@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title> Lab 09 Part A</title>
+<style>
+body{
+    background-color: cornflowerblue;
+}
+
+</style>
+</head>
+
+<body>
+<p>How many buttons to creates?</p>
+<input type="text" id="Number">
+<button id = "number">Go!</button><br>
+
+<script>
+    document.getElementById('number').onclick =  checkGo;
+    let width = (window.innerWidth / 2) - 100
+    let height = (window.innerHeight / 2) - 100
+
+function position(position) {
+        this.position = position
+        }
+
+function checkGo(){ 
+    var x = document.getElementById("Number").value
+    x = parseInt(x);
+
+        for(i = 0; i < x; i++){
+            let btn = document.createElement('button');
+                    document.body.appendChild(btn);
+                    btn.style.background = Color();
+                    btn.style.width = '120px';
+                    btn.style.height = '60px';
+                    for (j = 0; j < x;){
+                    function action() {
+                        let widthVariable = window.innerWidth
+                        let heightVariable = window.innerHeight
+                            left = ((Math.random() * (widthVariable  - 150)) + 'px');
+                            top = ((Math.random() * (heightVariable  - 150)) + 'px');
+                            btn.style.position = 'absolute';
+                            btn.style.left = left;
+                            btn.style.top = top;
+                        }
+                    } setInterval(action, 2000)
+        }
+    }
+
+function Color() {
+    let words = '0123456789ABCDEF'.split('');
+    let color = '#';
+    for (let i = 0; i < 6; i++ ) {color += words[Math.round(Math.random() * 16)];
+    }
+    return color;
+}
+</script>
+
+
+
+    
+</body>
